@@ -1,12 +1,13 @@
-import React from 'react'
-import SearchData from './pages/search-data'
+import React from "react";
+import "./App.css";
+import SearchData from "./pages/search-data";
 
 const App = () => {
   return (
-    <div>
+    <div className="App">
       <SearchData />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

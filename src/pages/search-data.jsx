@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import TextInput from "../components/text-input";
+import "./search-data.css";
+import TextInput from "../components/text-input/text-input";
+import SearchResult from "../components/search-result/search-result";
 
 const SearchData = () => {
   const [keyword, setKeyword] = useState("");
@@ -14,6 +16,7 @@ const SearchData = () => {
         value={keyword}
         handleChange={(e) => handleChange(e)}
       />
+      <SearchResult />
     </div>
   );
 };
