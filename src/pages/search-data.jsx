@@ -16,7 +16,7 @@ const SearchData = () => {
         value={keyword}
         handleChange={(e) => handleChange(e)}
       />
-      <SearchResult />
+      {keyword.length > 0 && <SearchResult keyword={keyword} />}
     </div>
   );
 };
