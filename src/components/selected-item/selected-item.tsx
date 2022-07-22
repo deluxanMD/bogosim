@@ -1,7 +1,14 @@
 import React from "react";
 import "./selected-item.css";
+import { ItemI } from "../../interface/item";
 
-const SelectedItem = ({ item }) => {
+interface IProps {
+  item: ItemI;
+}
+
+const SelectedItem = (props: IProps) => {
+  const { item } = props;
+
   return (
     <div className="SelectedItem">
       <h1>Search Result</h1>
