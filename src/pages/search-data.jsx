@@ -6,6 +6,7 @@ import SelectedItem from "../components/selected-item/selected-item";
 
 const SearchData = () => {
   const [keyword, setKeyword] = useState("");
+  const [temp, setTemp] = useState("");
   const [selected, setSelected] = useState(null);
 
   const handleChange = (e) => {
@@ -16,6 +17,11 @@ const SearchData = () => {
   const handleSelect = (data) => {
     setSelected(data);
     setKeyword("");
+    setTemp("");
+  };
+
+  const handleHover = (data) => {
+    setTemp(data.name);
   };
 
   return (
@@ -23,11 +29,15 @@ const SearchData = () => {
       <TextInput
         type="text"
         placeholder="Search data here"
-        value={keyword}
+        value={temp || keyword}
         handleChange={(e) => handleChange(e)}
       />
       {keyword.length > 0 && !selected && (
-        <SearchResult keyword={keyword} handleSelect={handleSelect} />
+        <SearchResult
+          keyword={keyword}
+          handleSelect={handleSelect}
+          handleHover={handleHover}
+        />
       )}
       {selected && <SelectedItem item={selected} />}
     </div>
