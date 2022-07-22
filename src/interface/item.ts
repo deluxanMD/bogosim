@@ -1,8 +1,8 @@
 export interface ItemI {
     amountUnit: string;
-    amountValue: string;
+    amountValue: number;
     pzn: string;
     name: string;
-    strengthUnit: string;
-    strengthValue: string;
+    strengthUnit: string | null;
+    strengthValue: number | null;
 }

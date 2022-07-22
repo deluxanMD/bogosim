@@ -1,12 +1,21 @@
 import React from "react";
 import "./search-result.css";
 import { RESULTS } from "../../mock-data/data";
+import { ItemI } from "../../interface/item";
 
-const SearchResult = ({ keyword, handleSelect, handleHover }) => {
+interface IProps {
+  keyword: string;
+  handleSelect: (item: ItemI) => void;
+  handleHover: (item: ItemI) => void;
+}
+
+const SearchResult = (props: IProps) => {
+  const { keyword, handleSelect, handleHover } = props;
+
   return (
     <div className="SearchResult">
       {RESULTS.map(
-        (res) =>
+        (res: ItemI) =>
           res.name.toLowerCase().includes(keyword.toLowerCase()) && (
             <p
               key={res.name}
