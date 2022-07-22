@@ -1,12 +1,15 @@
 .SearchResult {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  margin-top: -10px;
 }
 
 .SearchResult p {
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
+  margin: 0;
   border-bottom: 1px solid #cccccc;
+  cursor: pointer;
+}
+
+.SearchResult p:hover {
+  background-color: #cccccc;
 }
