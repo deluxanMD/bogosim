@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import SearchData from "./pages/search-data";
+import SearchFuzzy from "./components/fuzzy-search/fuzzy-search";
+import SelectedItem from "./components/selected-item/selected-item";
+import { ItemI } from "./interface/item";
 
 const App = () => {
+  const [selectedItem, setSelectedItem] = useState<ItemI | null>(null);
+
+  const handleSelect = (item: ItemI) => setSelectedItem(item);
+
   return (
     <div className="App">
-      <SearchData />
+      <SearchFuzzy getSelectedItem={(item) => handleSelect(item)} />
+      <SelectedItem item={selectedItem} />
     </div>
   );
 };
